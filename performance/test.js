@@ -14,7 +14,7 @@ export default function () {
         email: "heallo"
         phone: "123-123-1231"
     });
-    let response = http.get('http://localhost:8080/api/v1/user');
+    let response = http.get('http://${__ENV.MY_HOSTNAME}:8080/api/v1/user');
 
     // 응답 확인
     check(response, {
