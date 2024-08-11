@@ -22,6 +22,8 @@ services:
     container_name: grafana
     ports:
       - "3000:3000"
+    expose:
+      - "3000"
     volumes:
       - ./grafana-data:/var/lib/grafana
     user: "root"
@@ -31,8 +33,7 @@ services:
       - GF_AUTH_DISABLE_LOGIN_FORM=true
     depends_on:
       - prometheus
-    expose:
-      - "3000"
+
     deploy:
       resources:
         limits:
@@ -45,6 +46,8 @@ services:
     image: prom/node-exporter
     ports:
       - "9100:9100"
+    expose:
+      - "9100"
     volumes:
       - /proc:/host/proc:ro
       - /sys:/host/sys/:ro
@@ -67,6 +70,8 @@ services:
     image: jivebreaddev/spring:1.0.2
     ports:
       - "8080:8080"
+    expose:
+     - "8080"
     restart: always
     deploy:
       resources:
