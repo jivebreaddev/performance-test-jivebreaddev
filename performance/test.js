@@ -19,6 +19,7 @@ export default function () {
     // 응답 확인
     check(response, {
         'is status 200': (r) => r.status === 200,
-    });
+    }); //     command: run /test.js --out json=test.json --out influxdb=http://localhost:8086/myk6db
+
     sleep(0.1); // 유저당 8 반복/s  -> 8 * 500 * 60 * 10번 = 240_000번
 }
