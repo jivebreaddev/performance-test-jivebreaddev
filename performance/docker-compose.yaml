@@ -7,6 +7,7 @@ services:
     volumes:
       - ./test.js:/test.js
     command: run /test.js --out json=test.json --out influxdb=http://localhost:8086/myk6db
+    network_mode: host
   influxdb:
     image: bitnami/influxdb:1.8.5
     container_name: influxdb
@@ -17,6 +18,7 @@ services:
       - INFLUXDB_ADMIN_USER_TOKEN=1234
       - INFLUXDB_HTTP_AUTH_ENABLED=false
       - INFLUXDB_DB=myk6db
+    network_mode: host
   granafa:
     image: bitnami/grafana:latest
     ports:
@@ -38,3 +40,4 @@ services:
         reservations:
           cpus: '0.5'
           memory: 256M
+    network_mode: host
