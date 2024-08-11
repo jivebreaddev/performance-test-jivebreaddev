@@ -6,8 +6,7 @@ services:
       - "6565:6565"
     volumes:
       - ./test.js:/test.js
-    command: run /test.js -e MY_HOSTNAME=43.201.169.49 --out json=test.json --out influxdb=http://localhost:8086/myk6db
-    network_mode: host
+    command: run /test.js --out json=test.json --out influxdb=http://localhost:8086/myk6db
   influxdb:
     image: bitnami/influxdb:1.8.5
     container_name: influxdb
