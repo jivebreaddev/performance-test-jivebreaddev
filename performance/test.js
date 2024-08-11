@@ -19,7 +19,7 @@ export default function () {
                 'Content-Type': 'application/json',
             },
         };
-    let response = http.post('http://43.201.169.49:8080/api/v1/user');
+    let response = http.post('http://43.201.169.49:8080/api/v1/user/');
 
     // 응답 확인
     check(response, {
