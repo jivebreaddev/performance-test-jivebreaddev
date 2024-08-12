@@ -20,11 +20,12 @@ services:
       - INFLUXDB_DB=myk6db
     network_mode: host
   granafa:
-    image: bitnami/grafana:latest
+    image: grafana/grafana
     ports:
       - "3000:3000"
     volumes:
       - ./grafana-data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
     user: "root"
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true

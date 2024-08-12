@@ -27,6 +27,7 @@ services:
       - "3000"
     volumes:
       - ./grafana-data:/var/lib/grafana
+      - ./grafana/provisioning/:/etc/grafana/provisioning/
     user: "root"
     environment:
       - GF_AUTH_ANONYMOUS_ENABLED=true
