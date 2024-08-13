@@ -36,10 +36,7 @@ export default function () {
 
 }
 
-export function handleSummary(data){
-    return {
-        "./value/summary.html": htmlReport(data)
-
-    }
-}
 //docker run --rm -e MY_HOSTNAME=3.34.77.61 -v ./test.js:/test.js -i grafana/k6 run --out influxdb=http://localhost:8086/myk6db -<test.js
+
+//vi test.js
+// docker run --rm -v ./value:/value -v ./test.js:/test.js -i grafana/k6 run --summary-trend-stats="med,p(95),p(99.9)" -<test.js
