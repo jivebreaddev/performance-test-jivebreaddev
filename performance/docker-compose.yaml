@@ -6,6 +6,7 @@ services:
       - "6565:6565"
     volumes:
       - ./test.js:/test.js
+      - ./value/summary.html:/value/summary.html
     command: run /test.js --out json=test.json --out influxdb=http://127.0.0.1:8086/myk6db
     network_mode: host
 #  influxdb:
