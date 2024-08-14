@@ -19,7 +19,6 @@ public class UserController {
     @PostMapping("/")
     public ResponseEntity<List<User>> getUsers(@RequestBody UserDto user) {
 
-        userRepository.addUser();
         List<User> users = userRepository.findAll();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
