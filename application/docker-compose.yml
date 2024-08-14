@@ -84,3 +84,4 @@ services:
         reservations:
           cpus: '1.25'
           memory: 2048M
+    network_mode: host
