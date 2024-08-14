@@ -70,7 +70,7 @@ services:
           memory: 256M
     network_mode: host
   application:
-    image: jivebreaddev/spring:1.0.4
+    image: jivebreaddev/spring:1.0.2
     ports:
       - "8080:8080"
     expose:
